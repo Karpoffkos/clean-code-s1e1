@@ -112,7 +112,7 @@ button {
     margin: 0 0 20px;
 }
 
-.input-text #new-task {
+.input-text#new-task {
     width: 318px;
 }
 
