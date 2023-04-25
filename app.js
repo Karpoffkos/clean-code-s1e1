@@ -21,7 +21,7 @@ const createNewTaskElement = function (taskString) {
     listItem.classList.add('list-item')
     //input (checkbox)
     const checkBox = document.createElement("input");//checkbx
-    listItem.classList.add('task-checkbox')
+    checkBox.classList.add('task-checkbox')
     //label
     const label = document.createElement("label");//label
     //input (text)
@@ -35,6 +35,7 @@ const createNewTaskElement = function (taskString) {
 
     const deleteButtonImg = document.createElement("img");//delete button image
     deleteButtonImg.classList.add('button-img');
+    deleteButtonImg.setAttribute('alt', 'remove.svg');
 
     label.innerText = taskString;
     label.className = 'task';
@@ -94,7 +95,6 @@ const editTask = function () {
     const containsClass = listItem.classList.contains("edit-mode");
     //If class of the parent is .edit-mode
     if (containsClass) {
-
         //switch to .edit-mode
         //label becomes the inputs value.
         label.innerText = editInput.value;
@@ -139,7 +139,7 @@ const taskIncomplete = function () {
     //When the checkbox is unchecked
     //Append the task list item to the #incomplete-tasks.
     const listItem = this.parentNode;
-    add-task.appendChild(listItem);
+    incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 }
 
@@ -179,7 +179,7 @@ const bindTaskEvents = function(taskListItem, checkBoxEventHandler){
 for (let i = 0; i < incompleteTaskHolder.children.length;i++){
 
     //bind events to list items chldren(tasksCompleted)
-    bindTaskEvents(incompleteTaskHolder.children.length.children[i], taskCompleted);
+    bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
 
