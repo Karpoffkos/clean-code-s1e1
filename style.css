@@ -48,13 +48,13 @@ body {
     display: flex;
 }
 
-ul {
+.task-list {
     margin: 0;
     padding: 0px;
 }
 
-li,
-h3 {
+.list-item,
+.tasks-title {
     list-style: none;
 }
 
