@@ -71,8 +71,8 @@ const addTask = function () {
     if (!taskInput.value) return;
     const listItem = createNewTaskElement(taskInput.value);
 
-    //Append listItem to incompleteTaskHolder
-    incompleteTaskHolder.appendChild(listItem);
+    //Append listItem to add-task
+    add-task.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 
     taskInput.value = "";
@@ -139,7 +139,7 @@ const taskIncomplete = function () {
     //When the checkbox is unchecked
     //Append the task list item to the #incomplete-tasks.
     const listItem = this.parentNode;
-    incompleteTaskHolder.appendChild(listItem);
+    add-task.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 }
 
@@ -174,12 +174,12 @@ const bindTaskEvents = function(taskListItem, checkBoxEventHandler){
     checkBox.onchange = checkBoxEventHandler;
 }
 
-//cycle over incompleteTaskHolder ul list items
+//cycle over add-task ul list items
 //for each list item
 for (let i = 0; i < incompleteTaskHolder.children.length;i++){
 
     //bind events to list items chldren(tasksCompleted)
-    bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
+    bindTaskEvents(incompleteTaskHolder.children.length.children[i], taskCompleted);
 }
 
 
